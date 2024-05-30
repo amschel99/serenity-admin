@@ -40,7 +40,7 @@ function Reading() {
     }));
   };
 
-  const handleAutocompleteChange = (event: any, value: any) => {
+  const handleAutocompleteChange = (value: any) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       stepworkName: value,
