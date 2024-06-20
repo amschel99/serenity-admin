@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 
 import LoginForm from "./pages/Auth/Login";
 import ProtectedRoute from "./components/Private";
+import Users from "./pages/Users";
 
 export const App = () => {
   return (
@@ -20,6 +21,11 @@ export const App = () => {
               </ProtectedRoute>
             }
           ></Route>
+          <Route path="/users" element={<Users/>} >
+
+
+
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>

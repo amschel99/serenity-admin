@@ -175,3 +175,38 @@ export const saveReading = async (data: any): Promise<AxiosResponse> => {
     throw error;
   }
 };
+
+
+
+export const fetchUsers = async (): Promise<AxiosResponse> => {
+  try {
+    const response = await axios.get(`http://ec2-54-86-147-73.compute-1.amazonaws.com/api/user/users`, {
+      headers:{
+        "Content-Type": "application/json",
+      }
+   
+    });
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error("Error saving saving data:", error);
+    throw error;
+  }
+};
+
+export const deleteAccount = async (userId:string): Promise<AxiosResponse> => {
+  try {
+    const response = await axios.delete(`http://ec2-54-86-147-73.compute-1.amazonaws.com/api/user/singleUser/${userId}`, {
+      headers:{
+        "Content-Type": "application/json",
+       authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+      }
+   
+    });
+    console.log(response);
+    return response;
+  } catch (error) {
+    console.error("Error saving saving data:", error);
+    throw error;
+  }
+};
