@@ -2,7 +2,7 @@ import { CasualData, EmployeeData, SupplierData } from "../store";
 
 import axios, { AxiosResponse } from "axios";
 
-const api_url = `http://ec2-54-196-226-136.compute-1.amazonaws.com`; //OR localhost:5000
+const api_url = `http://ec2-54-226-161-79.compute-1.amazonaws.com`; //OR localhost:5000
 type SignupData = {
   email: string;
   password: string;
