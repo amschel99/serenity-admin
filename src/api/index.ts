@@ -2,7 +2,7 @@ import { CasualData, EmployeeData, SupplierData } from "../store";
 
 import axios, { AxiosResponse } from "axios";
 
-const api_url = `http://ec2-54-226-161-79.compute-1.amazonaws.com`; //OR localhost:5000
+const api_url = `http://ec2-54-226-161-79.compute-1.amazonaws.com/`; //OR localhost:5000
 type SignupData = {
   email: string;
   password: string;
@@ -180,7 +180,7 @@ export const saveReading = async (data: any): Promise<AxiosResponse> => {
 
 export const fetchUsers = async (): Promise<AxiosResponse> => {
   try {
-    const response = await axios.get(`http://ec2-54-86-147-73.compute-1.amazonaws.com/api/user/users`, {
+    const response = await axios.get(`http://ec2-54-226-161-79.compute-1.amazonaws.com/api/user/users`, {
       headers:{
         "Content-Type": "application/json",
       }
@@ -196,7 +196,7 @@ export const fetchUsers = async (): Promise<AxiosResponse> => {
 
 export const deleteAccount = async (userId:string): Promise<AxiosResponse> => {
   try {
-    const response = await axios.delete(`http://ec2-54-86-147-73.compute-1.amazonaws.com/api/user/singleUser/${userId}`, {
+    const response = await axios.delete(`http://ec2-54-226-161-79.compute-1.amazonaws.com/api/user/singleUser/${userId}`, {
       headers:{
         "Content-Type": "application/json",
        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
